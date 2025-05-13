@@ -47,8 +47,8 @@ fun MainNavigation() {
                 when (currentUser?.role) {
                     "user" -> UserStubScreen { viewModel.logout() }
                     "kitchen" -> KitchenStubScreen { viewModel.logout() }
-                    "admin" -> AdminStubScreen { viewModel.logout() }
-                    else -> { /* Без понятия что тут может быть */ }
+                    "admin" -> AdminMenuScreen()
+                    else -> { /* Обработка неизвестной роли */ }
                 }
             }
         }
