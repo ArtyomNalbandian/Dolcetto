@@ -54,7 +54,7 @@ fun UserMenuScreen(
             TopAppBar(
                 title = { Text("Menu") },
                 actions = {
-                    IconButton(onClick = { navController.navigate("cart") }) {
+                    IconButton(onClick = { navController.navigate("user/cart") }) {
                         BadgedBox(badge = {
                             if (cartState is Resource.Success) {
                                 val count =
