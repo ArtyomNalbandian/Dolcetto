@@ -1,4 +1,4 @@
-package com.example.dolcetto
+package com.example.dolcetto.presentation.common
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,6 +18,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
+import com.example.dolcetto.presentation.menu.AdminMenuScreen
+import com.example.dolcetto.presentation.auth.AuthViewModel
+import com.example.dolcetto.presentation.auth.LoginScreen
+import com.example.dolcetto.presentation.auth.RegisterScreen
 
 @Composable
 fun MainNavigation() {

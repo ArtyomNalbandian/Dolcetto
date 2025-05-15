@@ -1,4 +1,4 @@
-package com.example.dolcetto
+package com.example.dolcetto.presentation.menu
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
+import com.example.dolcetto.domain.model.Dish
 
 @Composable
 fun EditDishDialog(

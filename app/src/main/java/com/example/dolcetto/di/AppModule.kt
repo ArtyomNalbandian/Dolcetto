@@ -1,5 +1,6 @@
-package com.example.dolcetto
+package com.example.dolcetto.di
 
+import com.example.dolcetto.data.repository.AuthRepository
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth

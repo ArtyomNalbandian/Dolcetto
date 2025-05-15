@@ -1,10 +1,10 @@
-package com.example.dolcetto
+package com.example.dolcetto.data.repository
 
+import com.example.dolcetto.domain.model.Dish
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 

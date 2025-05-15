@@ -1,4 +1,4 @@
-package com.example.dolcetto
+package com.example.dolcetto.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

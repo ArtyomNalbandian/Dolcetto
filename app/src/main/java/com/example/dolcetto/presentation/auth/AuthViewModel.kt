@@ -1,7 +1,10 @@
-package com.example.dolcetto
+package com.example.dolcetto.presentation.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.dolcetto.data.repository.AuthRepository
+import com.example.dolcetto.data.repository.Resource
+import com.example.dolcetto.domain.model.UserData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

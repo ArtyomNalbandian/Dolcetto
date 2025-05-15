@@ -1,4 +1,4 @@
-package com.example.dolcetto
+package com.example.dolcetto.presentation.auth
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -27,6 +27,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.dolcetto.data.repository.Resource
 
 @Composable
 fun LoginScreen(navController: NavController) {

@@ -1,4 +1,4 @@
-package com.example.dolcetto
+package com.example.dolcetto.presentation.menu
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,6 +28,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.dolcetto.domain.model.Dish
+import com.example.dolcetto.data.repository.Resource
 
 @Composable
 fun AdminMenuScreen(

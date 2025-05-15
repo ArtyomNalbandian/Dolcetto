@@ -1,5 +1,6 @@
-package com.example.dolcetto
+package com.example.dolcetto.data.repository
 
+import com.example.dolcetto.domain.model.UserData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await

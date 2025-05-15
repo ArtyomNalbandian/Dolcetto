@@ -1,4 +1,4 @@
-package com.example.dolcetto
+package com.example.dolcetto.domain.model
 
 data class UserData(
     val userId: String = "",

@@ -1,7 +1,10 @@
-package com.example.dolcetto
+package com.example.dolcetto.presentation.menu
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.dolcetto.domain.model.Dish
+import com.example.dolcetto.data.repository.MenuRepository
+import com.example.dolcetto.data.repository.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -29,7 +32,8 @@ class AdminViewModel @Inject constructor(
         viewModelScope.launch {
             menuRepository.getMenu()
                 .catch { e ->
-                    _menuState.value = Resource.Error<List<Dish>>(message = e.message ?: "Error loading menu")
+                    _menuState.value =
+                        Resource.Error<List<Dish>>(message = e.message ?: "Error loading menu")
 //                    _menuState.value = Resource.Error(e.message ?: "Error loading menu")
                 }
                 .collect { dishes ->
@@ -56,7 +60,8 @@ class AdminViewModel @Inject constructor(
 //                    loadMenu() может быть потом верну
                 }
                 is Resource.Error -> {
-                    _menuState.value = Resource.Error(message = result.message ?: "Error", data = null)
+                    _menuState.value =
+                        Resource.Error(message = result.message ?: "Error", data = null)
 //                    _menuState.value = result
                 }
                 else -> {}
@@ -69,7 +74,8 @@ class AdminViewModel @Inject constructor(
             when (val result = menuRepository.deleteDish(dishId)) {
                 is Resource.Success -> loadMenu()
                 is Resource.Error -> {
-                    _menuState.value = Resource.Error(message = result.message ?: "Error", data = null)
+                    _menuState.value =
+                        Resource.Error(message = result.message ?: "Error", data = null)
 //                    _menuState.value = result
                 }
                 else -> {}
