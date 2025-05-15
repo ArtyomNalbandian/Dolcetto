@@ -37,7 +37,7 @@ class AuthRepository @Inject constructor(
         return try {
             val snapshot = db.collection("users").document(uid).get().await()
             if (snapshot.exists()) {
-                val user = snapshot.toObject(UserData::class.java)!!
+                val user = snapshot.toObject(UserData::class.java) ?: UserData() // Добавил ?: UserData, было просто !!
                 Resource.Success(user)
             } else {
                 createNewUser(uid, auth.currentUser?.email ?: "")

@@ -76,7 +76,7 @@ fun DishDetailScreen(
         },
         floatingActionButton = {
             ExtendedFloatingActionButton(
-                onClick = { dishState?.let { viewModel.addToCart(it as Dish) }},
+                onClick = { dishState.let { it.data?.let { it1 -> viewModel.addToCart(it1) } } },
                 //onClick = { dish?.let { viewModel.addToCart(it) } },
                 icon = { Icon(Icons.Default.Add, "Add to cart") },
                 text = { Text("Add to Cart") }

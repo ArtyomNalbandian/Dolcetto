@@ -6,4 +6,6 @@ data class CartItem(
     val price: Double = 0.0,
     val name: String = "",
     val imageUrl: String = "",
-)
+) {
+    constructor() : this("", 1, 0.0, "", "")
+}
