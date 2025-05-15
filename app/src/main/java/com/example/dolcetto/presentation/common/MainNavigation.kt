@@ -22,6 +22,7 @@ import com.example.dolcetto.presentation.menu.AdminMenuScreen
 import com.example.dolcetto.presentation.auth.AuthViewModel
 import com.example.dolcetto.presentation.auth.LoginScreen
 import com.example.dolcetto.presentation.auth.RegisterScreen
+import com.example.dolcetto.presentation.cook.CookMenuScreen
 
 @Composable
 fun MainNavigation() {
@@ -50,7 +51,7 @@ fun MainNavigation() {
             composable("role") {
                 when (currentUser?.role) {
                     "user" -> UserStubScreen { viewModel.logout() }
-                    "kitchen" -> KitchenStubScreen { viewModel.logout() }
+                    "kitchen" -> CookMenuScreen()
                     "admin" -> AdminMenuScreen()
                     else -> { /* Обработка неизвестной роли */ }
                 }
