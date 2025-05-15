@@ -5,8 +5,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
+
 
 class MenuRepository @Inject constructor(
     private val db: FirebaseFirestore
@@ -60,6 +62,21 @@ class MenuRepository @Inject constructor(
             Resource.Success(Unit)
         } catch (e: Exception) {
             Resource.Error(e.message ?: "Error deleting dish")
+        }
+    }
+
+    fun getDishById(dishId: String) = flow<Resource<Dish>> {
+        emit(Resource.Loading())
+        try {
+            val snapshot = db.collection("dishes").document(dishId).get().await()
+            if (snapshot.exists()) {
+                val dish = snapshot.toObject(Dish::class.java)!!
+                emit(Resource.Success(dish))
+            } else {
+                emit(Resource.Error("Dish not found"))
+            }
+        } catch (e: Exception) {
+            emit(Resource.Error(e.message ?: "Error fetching dish"))
         }
     }
 
